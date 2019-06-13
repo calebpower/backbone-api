@@ -1,0 +1,64 @@
+plugins {
+  id "com.github.johnrengelman.shadow" version "2.0.1"
+}
+
+//apply the java-library plugin to add support for Java Library
+apply plugin: 'java-library'
+
+//apply the eclipse plugin to add support for the eclipse IDE
+apply plugin: 'eclipse'
+
+//in this section you declare where to find the dependencies of your project
+repositories {
+  jcenter()
+  maven {
+    url "http://artifactory.acmcentral.org/minecraft-deps"
+  }
+  ivy { //compatibility with Gradle repos in Artifactory
+    url "http://artifactory.acmcentral.org/misc-deps"
+    layout "pattern", {
+      artifact "[organisation]/[module]/[revision]/[artifact]-[revision].[ext]"
+    }
+  }
+}
+
+group = theGroup
+version = theVersion
+sourceCompatibility = theSourceCompatibility
+
+dependencies {
+
+  //this dependency is exported to consumers, that is to say found on their compile classpath.
+  api 'org.apache.commons:commons-math3:3.6.1'
+  
+  //this dependency is for all json-related stuffs
+  implementation 'org.json:json:20180130'
+  
+  //Minecraft Spigot server, which is already running
+  implementation 'org.spigotmc:spigot-api:1.13.2-R0.1-SNAPSHOT'
+  
+  //MySQL
+  implementation 'mysql:mysql-connector-java:8.0.11'
+  
+  //Use JUnit test framework
+  //testImplementation 'junit:junit:4.12'
+}
+
+eclipse {
+  classpath {
+    downloadJavadoc = true //download javadocs
+    downloadSources = true //download sources
+  }
+}
+
+shadowJar {
+  shadowJar {
+    baseName = theName
+    classifier = null
+    version = theVersion
+  }
+}
+
+configurations {
+  runtime.exclude module: 'spigot-api'
+}

@@ -1,25 +1,32 @@
 package com.meepcraft.backbone.api;
 
+import java.sql.Connection;
+
 import org.bukkit.Server;
 import org.bukkit.plugin.Plugin;
 
 public class BackboneAPI {
   
-  private Server server = null;
+  private BackbonePlugin plugin = null;
   
   public BackboneAPI(Server server) {
-    this.server = server;
-  }
-  
-  public PlayerManager getPlayerManager() {
     Plugin plugin = server.getPluginManager().getPlugin("MeepBackbone");
     if(plugin != null) try {
-      BackbonePlugin backbonePlugin = (BackbonePlugin)plugin;
-      return backbonePlugin.getPlayerManager();
+      this.plugin = (BackbonePlugin)plugin;
     } catch(ClassCastException e) {
       e.printStackTrace();
     }
-    
+  }
+  
+  public Connection getDBConnection() {
+    if(plugin != null)
+      return plugin.getDBConnection();
+    return null;
+  }
+  
+  public PlayerManager getPlayerManager() {
+    if(plugin != null)
+      return plugin.getPlayerManager();
     return null;
   }
   

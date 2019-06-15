@@ -1,6 +1,6 @@
 package com.meepcraft.backbone.api.entity;
 
-public class GlobalInventory {
+public interface GlobalPlayerInventory {
   
   // TODO stub
   

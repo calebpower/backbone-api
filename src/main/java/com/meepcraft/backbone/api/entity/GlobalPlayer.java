@@ -2,12 +2,9 @@ package com.meepcraft.backbone.api.entity;
 
 import java.util.UUID;
 
-public class GlobalPlayer {
-  
-  private GlobalLocation lastKnownLocation = null;
-  private UUID uuid = null;
-  private String ign = null;
-  private Status status = null;
+import org.json.JSONObject;
+
+public interface GlobalPlayer {
   
   public static enum Status {
     ACTIVE,
@@ -16,27 +13,18 @@ public class GlobalPlayer {
     BANNED
   }
   
-  public GlobalPlayer(UUID uuid, String ign, Status status, GlobalLocation lastKnownLocation) {
-    this.uuid = uuid;
-    this.ign = ign;
-    this.status = status;
-    this.lastKnownLocation = lastKnownLocation;
-  }
+  public GlobalLocation getLastKnownLocation();
   
-  public GlobalLocation getLastKnownLocation() {
-    return lastKnownLocation;
-  }
+  public UUID getUUID();
   
-  public UUID getUUID() {
-    return uuid;
-  }
+  public String getIGN();
   
-  public String getIGN() {
-    return ign;
-  }
+  public Status getStatus();
   
-  public Status getStatus() {
-    return status;
-  }
+  public JSONObject serialize();
+  
+  public boolean equals(GlobalPlayer player);
+  
+  public boolean isOnline();
   
 }

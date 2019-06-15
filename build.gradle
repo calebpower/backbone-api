@@ -12,10 +12,10 @@ apply plugin: 'eclipse'
 repositories {
   jcenter()
   maven {
-    url "http://artifactory.acmcentral.org/minecraft-deps"
+    url "http://dev.eosblocksmith.io:8080/repository/meep"
   }
   ivy { //compatibility with Gradle repos in Artifactory
-    url "http://artifactory.acmcentral.org/misc-deps"
+    url "http://dev.eosblocksmith.io:8080/repository/meep"
     layout "pattern", {
       artifact "[organisation]/[module]/[revision]/[artifact]-[revision].[ext]"
     }
@@ -35,10 +35,13 @@ dependencies {
   implementation 'org.json:json:20180130'
   
   //Minecraft Spigot server, which is already running
-  implementation 'org.spigotmc:spigot-api:1.13.2-R0.1-SNAPSHOT'
+  compileOnly 'org.spigotmc:spigot-api:1.13.2-R0.1-SNAPSHOT'
   
   //MySQL
   implementation 'mysql:mysql-connector-java:8.0.11'
+  
+  //BoneMesh
+  compileOnly 'com.calebpower.bonemesh:BoneMesh:1.0.1'
   
   //Use JUnit test framework
   //testImplementation 'junit:junit:4.12'

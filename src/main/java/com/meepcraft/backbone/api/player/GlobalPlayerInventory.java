@@ -1,4 +1,4 @@
-package com.meepcraft.backbone.api.entity;
+package com.meepcraft.backbone.api.player;
 
 public interface GlobalPlayerInventory {
   

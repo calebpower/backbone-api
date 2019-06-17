@@ -2,8 +2,8 @@ package com.meepcraft.backbone.api;
 
 import java.util.UUID;
 
-import com.meepcraft.backbone.api.entity.GlobalLocation;
-import com.meepcraft.backbone.api.entity.GlobalPlayer;
+import com.meepcraft.backbone.api.location.GlobalLocation;
+import com.meepcraft.backbone.api.player.GlobalPlayer;
 
 public interface PlayerManager {
   

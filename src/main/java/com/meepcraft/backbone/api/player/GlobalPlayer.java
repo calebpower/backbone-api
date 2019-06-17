@@ -1,9 +1,11 @@
-package com.meepcraft.backbone.api.entity;
+package com.meepcraft.backbone.api.player;
 
 import java.util.Date;
 import java.util.UUID;
 
 import org.json.JSONObject;
+
+import com.meepcraft.backbone.api.location.GlobalLocation;
 
 public interface GlobalPlayer {
   

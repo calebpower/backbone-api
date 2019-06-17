@@ -6,6 +6,7 @@ import org.bukkit.Server;
 import org.bukkit.plugin.Plugin;
 
 import com.meepcraft.backbone.api.request.BackboneRequest;
+import com.meepcraft.backbone.api.request.RequestListener;
 
 public class BackboneAPI {
   
@@ -48,6 +49,18 @@ public class BackboneAPI {
     if(plugin != null)
       return plugin.dispatchRequest(node, request);
     return false;
+  }
+  
+  public boolean registerRequestListener(RequestListener requestListener) {
+    if(plugin == null) return false;
+    plugin.registerRequestListener(requestListener);
+    return true;
+  }
+  
+  public boolean deregisterRequestListener(RequestListener requestListener) {
+    if(plugin == null) return false;
+    plugin.deregisterRequestListener(requestListener);
+    return true;
   }
   
 }

@@ -17,7 +17,7 @@ public abstract class RequestListener implements DataListener {
   @Override public void digest(JSONObject message) {
     if(GenericMessage.isImplementedBy(message)) try {
       JSONObject payload = message.getJSONObject("payload");
-      String scope = payload.getString("scopes");
+      String scope = payload.getString("scope");
       boolean act = false;
       if(this.scopes == null) act = true;
       else {

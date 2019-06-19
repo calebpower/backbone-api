@@ -5,6 +5,7 @@ import java.sql.Connection;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.meepcraft.backbone.api.request.BackboneRequest;
+import com.meepcraft.backbone.api.request.RequestAckListener;
 import com.meepcraft.backbone.api.request.RequestListener;
 
 public abstract class BackbonePlugin extends JavaPlugin {
@@ -18,6 +19,8 @@ public abstract class BackbonePlugin extends JavaPlugin {
   public abstract boolean dispatchRequest(BackboneRequest request);
   
   public abstract boolean dispatchRequest(String node, BackboneRequest request);
+  
+  public abstract boolean dispatchRequest(String node, BackboneRequest request, RequestAckListener... ackListeners);
   
   public abstract void registerRequestListener(RequestListener requestListener);
   

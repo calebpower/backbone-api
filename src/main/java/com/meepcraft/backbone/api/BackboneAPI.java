@@ -52,9 +52,21 @@ public class BackboneAPI {
     return false;
   }
   
+  public boolean dispatchRequest(String node, BackboneRequest request, boolean retryOnFailure) {
+    if(plugin != null)
+      return plugin.dispatchRequest(node, request, retryOnFailure);
+    return false;
+  }
+  
   public boolean dispatchRequest(String node, BackboneRequest request, RequestAckListener... ackListeners) {
     if(plugin != null)
       return plugin.dispatchRequest(node, request, ackListeners);
+    return false;
+  }
+  
+  public boolean dispatchRequest(String node, BackboneRequest request, boolean retryOnFailure, RequestAckListener... ackListeners) {
+    if(plugin != null)
+      return plugin.dispatchRequest(node, request, retryOnFailure, ackListeners);
     return false;
   }
   

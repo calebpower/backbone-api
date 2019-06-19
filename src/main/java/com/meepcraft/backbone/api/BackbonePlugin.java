@@ -18,6 +18,8 @@ public abstract class BackbonePlugin extends JavaPlugin {
   
   public abstract boolean dispatchRequest(BackboneRequest request);
   
+  public abstract boolean dispatchRequest(BackboneRequest request, boolean retryOnFailure);
+  
   public abstract boolean dispatchRequest(String node, BackboneRequest request);
   
   public abstract boolean dispatchRequest(String node, BackboneRequest request, boolean retryOnFailure);

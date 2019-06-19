@@ -46,6 +46,12 @@ public class BackboneAPI {
     return false;
   }
   
+  public boolean dispatchRequest(BackboneRequest request, boolean retryOnFailure) {
+    if(plugin != null)
+      return plugin.dispatchRequest(request, retryOnFailure);
+    return false;
+  }
+  
   public boolean dispatchRequest(String node, BackboneRequest request) {
     if(plugin != null)
       return plugin.dispatchRequest(node, request);

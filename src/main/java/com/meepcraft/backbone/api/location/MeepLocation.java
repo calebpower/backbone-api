@@ -64,7 +64,7 @@ public class MeepLocation implements GlobalLocation {
     Location location = null;
     World world = Bukkit.getWorld(this.world);
     if(world != null)
-      location = new Location(world, x, y, z, pitch, yaw);
+      location = new Location(world, x, y, z, yaw, pitch);
     return location;
   }
   

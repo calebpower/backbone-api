@@ -6,14 +6,27 @@ import org.json.JSONObject;
 import com.calebpower.bonemesh.listener.DataListener;
 import com.calebpower.bonemesh.message.GenericMessage;
 
+/**
+ * Listens for requests to be transmitted.
+ * 
+ * @author Caleb L. Power
+ */
 public abstract class RequestListener implements DataListener {
   
   private String[] scopes = null;
   
+  /**
+   * Overloaded constructor to filter by one or more scopes.
+   * 
+   * @param scopes the scopes to filter for
+   */
   public RequestListener(String... scopes) {
     this.scopes = scopes;
   }
   
+  /**
+   * {@inheritDoc}
+   */
   @Override public void digest(JSONObject message) {
     if(GenericMessage.isImplementedBy(message)) try {
       JSONObject payload = message.getJSONObject("payload");
@@ -34,6 +47,14 @@ public abstract class RequestListener implements DataListener {
     } catch(JSONException e) { }
   }
   
+  /**
+   * Carries out a request that was received (and not filtered out).
+   * 
+   * @param scope the scope
+   * @param action the action
+   * @param payload the payload
+   * @throws JSONException to be thrown if the payload can't be parsed
+   */
   public abstract void carryOutRequest(String scope, String action, JSONObject payload) throws JSONException;
 
 }

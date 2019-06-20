@@ -20,9 +20,24 @@ public interface GlobalPlayer {
    * @author Caleb L. Power
    */
   public static enum Status {
+    /**
+     * The player is online and active.
+     */
     ACTIVE,
+    
+    /**
+     * The player is online and away and idle.
+     */
     AFK,
+    
+    /**
+     * The player is offline but not banned.
+     */
     OFFLINE,
+    
+    /**
+     * The player has been banned.
+     */
     BANNED
   }
   

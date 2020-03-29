@@ -1,7 +1,7 @@
 package com.meepcraft.backbone.api.request;
 
-import com.calebpower.bonemesh.listener.AckListener;
-import com.calebpower.bonemesh.socket.Payload;
+import com.axonibyte.bonemesh.listener.AckListener;
+import com.axonibyte.bonemesh.socket.Payload;
 
 /**
  * When registered, listens for a notification of a message's success or

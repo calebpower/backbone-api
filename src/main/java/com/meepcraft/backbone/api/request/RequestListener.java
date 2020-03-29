@@ -3,8 +3,8 @@ package com.meepcraft.backbone.api.request;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.calebpower.bonemesh.listener.DataListener;
-import com.calebpower.bonemesh.message.GenericMessage;
+import com.axonibyte.bonemesh.listener.DataListener;
+import com.axonibyte.bonemesh.message.GenericMessage;
 
 /**
  * Listens for requests to be transmitted.

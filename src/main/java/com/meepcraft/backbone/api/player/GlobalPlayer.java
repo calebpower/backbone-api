@@ -1,12 +1,12 @@
 package com.meepcraft.backbone.api.player;
 
 import java.util.Date;
+import java.util.Set;
 import java.util.UUID;
 
 import org.bukkit.Instrument;
 import org.bukkit.Note;
 import org.bukkit.Sound;
-import org.json.JSONObject;
 
 import com.meepcraft.backbone.api.location.GlobalLocation;
 
@@ -87,13 +87,6 @@ public interface GlobalPlayer {
   public Date getLastSeenTimestamp();
   
   /**
-   * Serializes the player into a JSON object for storage or transmission.
-   * 
-   * @return a JSON object representing the global player
-   */
-  public JSONObject serialize();
-  
-  /**
    * Determines if this global player is the same as another global player.
    * 
    * @param player the player to compare
@@ -162,4 +155,38 @@ public interface GlobalPlayer {
    */
   public boolean teleportPlayer(GlobalLocation location);
   
+  /**
+   * Retrieves a set of unique inventory identifiers.
+   * 
+   * @return a set of UUIDs
+   */
+  public Set<UUID> retrieveInventoryIDs();
+  
+  /**
+   * Retrieves the inventory corresponding to the unique identifier in question.
+   * 
+   * @param uuid the unique identifier of the inventory in question
+   * @return a GlobalPlayerInventory object representing the queried inventory,
+   *         or <code>null</code> if there is no corresponding inventory
+   */
+  public GlobalPlayerInventory retrieveInventory(UUID uuid);
+  
+  /**
+   * Creates and returns a new inventory corresponding with a particular UUID
+   * if the inventory has not been created already.
+   * 
+   * @param uuid the new inventory's proposed unique identifier
+   * @return <code>true</code> if a new inventory was created successfully, or
+   *         <code>false</code> if that particular UUID already exists
+   */
+  public boolean createInventory(UUID uuid);
+  
+  /**
+   * Drops an inventory corresponding with a particular UUID.
+   * 
+   * @param uuid the unique identifier of the inventory in question
+   * @return <code>true</code> if the inventory was dropped, or
+   *         <code>false</code> if the inventory didn't exist
+   */
+  public boolean dropInventory(UUID uuid);
 }

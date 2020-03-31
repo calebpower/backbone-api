@@ -17,6 +17,9 @@ repositories {
   maven {
     url "https://oss.sonatype.org/content/repositories/snapshots/"
   }
+  maven {
+    url "https://jitpack.io/"
+  }
 }
 
 group = theGroup
@@ -29,7 +32,7 @@ dependencies {
   compileOnly 'org.spigotmc:spigot-api:1.12.1-R0.1-SNAPSHOT'
   
   //BoneMesh
-  api 'com.axonibyte.bonemesh:BoneMesh:1.2.1'
+  api 'com.bitbucket.axonibyte:BoneMesh:2.0.1'
   
   // Use JUnit test framework
   // testImplementation 'junit:junit:4.12'

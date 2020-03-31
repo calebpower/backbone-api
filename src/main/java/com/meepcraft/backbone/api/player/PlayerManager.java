@@ -1,9 +1,6 @@
-package com.meepcraft.backbone.api;
+package com.meepcraft.backbone.api.player;
 
 import java.util.UUID;
-
-import com.meepcraft.backbone.api.location.GlobalLocation;
-import com.meepcraft.backbone.api.player.GlobalPlayer;
 
 /**
  * Manages and interacts with players in the universe.
@@ -27,24 +24,6 @@ public interface PlayerManager {
    * @return <code>true</code> on transmission preflight check success
    */
   public boolean broadcastMessage(String server, String message);
-  
-  /**
-   * Sends a message to a particular player.
-   * 
-   * @param player the player
-   * @param message the message
-   * @return <code>true</code> on transmission preflight check success
-   */
-  public boolean sendMessage(GlobalPlayer player, String message);
-  
-  /**
-   * Teleports a player to some location in the universe.
-   * 
-   * @param player the player
-   * @param location the location
-   * @return <code>true</code> on transmission preflight check success
-   */
-  public boolean teleportPlayer(GlobalPlayer player, GlobalLocation location);
   
   /**
    * Retrieves a global player by unique identifier if they exist.

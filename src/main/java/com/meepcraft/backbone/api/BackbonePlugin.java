@@ -4,10 +4,16 @@ import java.sql.Connection;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.meepcraft.backbone.api.player.PlayerManager;
 import com.meepcraft.backbone.api.request.BackboneRequest;
 import com.meepcraft.backbone.api.request.RequestAckListener;
 import com.meepcraft.backbone.api.request.RequestListener;
 
+/**
+ * An API to allow plugins to easily utilize BoneMesh functionality.
+ * 
+ * @author Caleb L. Power
+ */
 public abstract class BackbonePlugin extends JavaPlugin {
   
   /**

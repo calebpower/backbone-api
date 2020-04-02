@@ -1,0 +1,6 @@
+com.meepcraft.backbone.api
+com.meepcraft.backbone.api.location
+com.meepcraft.backbone.api.player
+com.meepcraft.backbone.api.player.listener
+com.meepcraft.backbone.api.player.listener.event
+com.meepcraft.backbone.api.request

@@ -5,6 +5,7 @@ import java.sql.Connection;
 import org.bukkit.Server;
 import org.bukkit.plugin.Plugin;
 
+import com.meepcraft.backbone.api.player.PlayerManager;
 import com.meepcraft.backbone.api.request.BackboneRequest;
 import com.meepcraft.backbone.api.request.RequestAckListener;
 import com.meepcraft.backbone.api.request.RequestListener;

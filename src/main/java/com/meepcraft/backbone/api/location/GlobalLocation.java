@@ -4,7 +4,7 @@ import org.bukkit.Location;
 import org.json.JSONObject;
 
 /**
- * Representation of any global location.
+ * Represents any global location.
  * 
  * @author Caleb L. Power
  */
@@ -86,6 +86,12 @@ public interface GlobalLocation {
    */
   public float getYaw();
   
+  /**
+   * Determines whether or not two locations are equivalent.
+   * 
+   * @param location the location in question
+   * @return <code>true</code> iff the locations are equivalent
+   */
   public boolean equals(GlobalLocation location);
   
 }

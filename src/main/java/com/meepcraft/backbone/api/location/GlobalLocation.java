@@ -1,7 +1,6 @@
 package com.meepcraft.backbone.api.location;
 
 import org.bukkit.Location;
-import org.json.JSONObject;
 
 /**
  * Represents any global location.
@@ -10,13 +9,6 @@ import org.json.JSONObject;
  */
 public interface GlobalLocation {
 
-  /**
-   * Retrieves the global location as a JSON object.
-   * 
-   * @return serialized form of this global location
-   */
-  public JSONObject serialize();
-  
   /**
    * Retrieves the Spigot in-game location on an arbitrary server.
    * 

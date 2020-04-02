@@ -5,6 +5,7 @@ import java.sql.Connection;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.meepcraft.backbone.api.player.PlayerManager;
+import com.meepcraft.backbone.api.player.listener.GlobalEventListener;
 import com.meepcraft.backbone.api.request.BackboneRequest;
 import com.meepcraft.backbone.api.request.RequestAckListener;
 import com.meepcraft.backbone.api.request.RequestListener;
@@ -109,19 +110,33 @@ public abstract class BackbonePlugin extends JavaPlugin {
   public abstract boolean dispatchRequest(String node, BackboneRequest request, boolean retryOnFailure, RequestAckListener...ackListeners);
   
   /**
+   * Registers a global event listener.
+   * 
+   * @param listener the listener
+   */
+  public abstract void registerEventListener(GlobalEventListener listener);
+  
+  /**
+   * Deregisters a global event listener.
+   * 
+   * @param listener the listener
+   */
+  public abstract void deregisterEventListener(GlobalEventListener listener);
+  
+  /**
    * Registers a request listener.
    * 
-   * @param requestListener the listener
+   * @param listener the listener
    * @see BackboneAPI#registerRequestListener(RequestListener)
    */
-  public abstract void registerRequestListener(RequestListener requestListener);
+  public abstract void registerRequestListener(RequestListener listener);
   
   /**
    * Deregisters a request listener.
    * 
-   * @param requestListener the listener
+   * @param listener the listener
    * @see BackboneAPI#deregisterRequestListener(RequestListener)
    */
-  public abstract void deregisterRequestListener(RequestListener requestListener);
+  public abstract void deregisterRequestListener(RequestListener listener);
   
 }

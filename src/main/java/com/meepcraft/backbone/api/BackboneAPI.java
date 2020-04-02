@@ -6,6 +6,7 @@ import org.bukkit.Server;
 import org.bukkit.plugin.Plugin;
 
 import com.meepcraft.backbone.api.player.PlayerManager;
+import com.meepcraft.backbone.api.player.listener.GlobalEventListener;
 import com.meepcraft.backbone.api.request.BackboneRequest;
 import com.meepcraft.backbone.api.request.RequestAckListener;
 import com.meepcraft.backbone.api.request.RequestListener;
@@ -77,7 +78,7 @@ public class BackboneAPI {
    * transmissions.
    * 
    * @param request the request
-   * @return <code>true</code> if all servers received the request
+   * @return <code>true</code> iff all servers received the request
    * @see BackbonePlugin#dispatchRequest(BackboneRequest)
    */
   public boolean dispatchRequest(BackboneRequest request) {
@@ -92,7 +93,7 @@ public class BackboneAPI {
    * 
    * @param request the request
    * @param retryOnFailure <code>true</code> to retry on transmission failure
-   * @return <code>true</code> if all servers received the request on the first try
+   * @return <code>true</code> iff all servers received the request on the first try
    * @see BackbonePlugin#dispatchRequest(BackboneRequest, boolean)
    */
   public boolean dispatchRequest(BackboneRequest request, boolean retryOnFailure) {
@@ -106,7 +107,7 @@ public class BackboneAPI {
    * 
    * @param node the recipient node
    * @param request the request
-   * @return <code>true</code> if the server received the transmission
+   * @return <code>true</code> iff the server received the transmission
    * @see BackbonePlugin#dispatchRequest(String, BackboneRequest)
    */
   public boolean dispatchRequest(String node, BackboneRequest request) {
@@ -122,7 +123,7 @@ public class BackboneAPI {
    * @param node the recipient node
    * @param request the request
    * @param retryOnFailure <code>true</code> to retry on transmission failure
-   * @return <code>true</code> if the server received the transmission on the first try
+   * @return <code>true</code> iff the server received the transmission on the first try
    * @see BackbonePlugin#dispatchRequest(String, BackboneRequest, boolean)
    */
   public boolean dispatchRequest(String node, BackboneRequest request, boolean retryOnFailure) {
@@ -137,7 +138,7 @@ public class BackboneAPI {
    * @param node the recipient node
    * @param request the request
    * @param ackListeners additional acknowledgement listeners to attach to the payload
-   * @return <code>true</code> if the server received the transmission
+   * @return <code>true</code> iff the server received the transmission
    * @see BackbonePlugin#dispatchRequest(String, BackboneRequest, RequestAckListener...)
    */
   public boolean dispatchRequest(String node, BackboneRequest request, RequestAckListener... ackListeners) {
@@ -154,7 +155,7 @@ public class BackboneAPI {
    * @param request the request
    * @param retryOnFailure <code>true</code> to retry on transmission failure
    * @param ackListeners additional acknowledgement listeners to attach to the payload
-   * @return <code>true</code> if the server received the transmission on the first try
+   * @return <code>true</code> iff the server received the transmission on the first try
    * @see BackbonePlugin#dispatchRequest(String, BackboneRequest, boolean, RequestAckListener...)
    */
   public boolean dispatchRequest(String node, BackboneRequest request, boolean retryOnFailure, RequestAckListener... ackListeners) {
@@ -164,10 +165,34 @@ public class BackboneAPI {
   }
   
   /**
+   * Registers a global event listener.
+   * 
+   * @param listener the listener
+   * @return <code>true</code> iff the registration was successful
+   */
+  public boolean registerEventListener(GlobalEventListener listener) {
+    if(plugin == null) return false;
+    plugin.registerEventListener(listener);
+    return true;
+  }
+  
+  /**
+   * Deregisters a global event listener.
+   * 
+   * @param listener the listener
+   * @return <code>true</code> iff the registration was successful
+   */
+  public boolean deregisterEventListener(GlobalEventListener listener) {
+    if(plugin == null) return false;
+    plugin.deregisterEventListener(listener);
+    return true;
+  }
+  
+  /**
    * Registers a request listener.
    * 
    * @param requestListener the listener
-   * @return <code>true</code> if the registration was successful
+   * @return <code>true</code> iff the registration was successful
    * @see BackbonePlugin#registerRequestListener(RequestListener)
    */
   public boolean registerRequestListener(RequestListener requestListener) {
@@ -180,7 +205,7 @@ public class BackboneAPI {
    * Deregisters a request listener.
    * 
    * @param requestListener the listener
-   * @return <code>true</code> if the deregistration was successful
+   * @return <code>true</code> iff the deregistration was successful
    * @see BackbonePlugin#deregisterRequestListener(RequestListener)
    */
   public boolean deregisterRequestListener(RequestListener requestListener) {

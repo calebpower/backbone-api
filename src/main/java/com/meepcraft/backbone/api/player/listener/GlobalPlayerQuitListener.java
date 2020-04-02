@@ -7,7 +7,7 @@ import com.meepcraft.backbone.api.player.listener.event.GlobalPlayerQuitEvent;
  * 
  * @author Caleb L. Power
  */
-public interface GlobalPlayerQuitListener {
+public interface GlobalPlayerQuitListener extends GlobalEventListener {
   
   /**
    * Fires when a player quits globally.

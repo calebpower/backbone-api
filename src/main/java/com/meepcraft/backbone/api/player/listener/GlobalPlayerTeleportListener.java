@@ -7,7 +7,7 @@ import com.meepcraft.backbone.api.player.listener.event.GlobalPlayerTeleportEven
  * 
  * @author Caleb L. Power
  */
-public interface GlobalPlayerTeleportListener {
+public interface GlobalPlayerTeleportListener extends GlobalEventListener {
   
   /**
    * Fires when a player teleports globally.

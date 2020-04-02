@@ -7,7 +7,7 @@ import com.meepcraft.backbone.api.player.listener.event.GlobalPlayerJoinEvent;
  * 
  * @author Caleb L. Power
  */
-public interface GlobalPlayerJoinListener {
+public interface GlobalPlayerJoinListener extends GlobalEventListener {
   
   /**
    * Fires when a player joins globally.

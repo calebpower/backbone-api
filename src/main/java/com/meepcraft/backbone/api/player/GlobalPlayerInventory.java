@@ -5,7 +5,7 @@ import java.util.UUID;
 import org.bukkit.inventory.ItemStack;
 
 /**
- * TODO to be implemented. Will represent a player's inventory.
+ * Represents a player's inventory.
  * 
  * @author Caleb L. Power
  */

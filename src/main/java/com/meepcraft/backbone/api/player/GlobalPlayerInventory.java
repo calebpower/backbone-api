@@ -55,36 +55,6 @@ public interface GlobalPlayerInventory {
   public GlobalPlayerInventory setHelmet(ItemStack itemStack);
   
   /**
-   * Returns the ItemStack that is in the player's main hand.
-   * 
-   * @return an ItemStack representing the item(s) in the player's main hand
-   */
-  public ItemStack getItemInMainHand();
-  
-  /**
-   * Sets the ItemStack in the player's main hand.
-   * 
-   * @param itemStack the ItemStack that is to be placed in the player's main hand
-   * @return this GlobalPlayerInventory object
-   */
-  public GlobalPlayerInventory setItemInMainHand(ItemStack itemStack);
-  
-  /**
-   * Returns the ItemStack that is in the player's off hand.
-   * 
-   * @return an ItemStack representing the item(s) in the player's off hand
-   */
-  public ItemStack getItemInOffHand();
-  
-  /**
-   * Sets the ItemStack in the player's off hand.
-   * 
-   * @param itemStack the ItemStack that is to be placed in the player's off hand
-   * @return this GlobalPlayerInventory object
-   */
-  public GlobalPlayerInventory setItemInOffHand(ItemStack itemStack);
-  
-  /**
    * Returns the ItemStack in the leggings slot.
    * 
    * @return an ItemStack representing the item(s) in the leggings slot
@@ -113,20 +83,5 @@ public interface GlobalPlayerInventory {
    * @return this GlobalPlayerInventory object
    */
   public GlobalPlayerInventory setContents(ItemStack[] itemStacks);
-  
-  /**
-   * Retrieves the slot number for the item that the player is holding.
-   * 
-   * @return an integer representing the slot number in question
-   */
-  public int getHeldItemSlot();
-  
-  /**
-   * Sets the slot number for the item that the player is holding.
-   * 
-   * @param slot the slot position representing the slot number in question
-   * @return this GlobalPlayerInventory object
-   */
-  public GlobalPlayerInventory setHeldItemSlot(int slot);
   
 }

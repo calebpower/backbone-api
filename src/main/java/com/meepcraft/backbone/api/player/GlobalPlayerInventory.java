@@ -1,7 +1,5 @@
 package com.meepcraft.backbone.api.player;
 
-import java.util.UUID;
-
 import org.bukkit.inventory.ItemStack;
 
 /**
@@ -10,13 +8,6 @@ import org.bukkit.inventory.ItemStack;
  * @author Caleb L. Power
  */
 public interface GlobalPlayerInventory {
-  
-  /**
-   * Retrieves the unique identifier of a global player's inventory.
-   * 
-   * @return the UUID of the inventory in question
-   */
-  public UUID getUUID();
   
   /**
    * Returns the ItemStack from the boots slot.

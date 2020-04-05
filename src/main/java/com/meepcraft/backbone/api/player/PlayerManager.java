@@ -40,6 +40,17 @@ public interface PlayerManager {
   public boolean broadcastMessage(String server, String world, String message);
   
   /**
+   * Broadcasts a message to all players on a particular world.
+   * 
+   * @param server the name of the server
+   * @param world the name of the world
+   * @param message the message
+   * @param permission a permission that a player must have to receive the message
+   * @return <code>true</code> on transmission preflight check success
+   */
+  public boolean broadcastMessage(String server, String world, String message, String permission);
+  
+  /**
    * Broadcasts a title to all players.
    * 
    * @param title the title in question
@@ -81,6 +92,22 @@ public interface PlayerManager {
       int fadeInDuration, int staticDuration, int fadeOutDuration);
   
   /**
+   * Broadcasts a title to all players in a particular world.
+   * 
+   * @param server the server in question
+   * @param world the world in question
+   * @param title the title in question
+   * @param subtitle the subtitle in question
+   * @param fadeInDuration the duration of the fade-in effect
+   * @param staticDuration the duration of the title
+   * @param fadeOutDuration the duration of the fade-out effect
+   * @param permission a permission that a player must have to receive the title
+   * @return <code>true</code> on transmission preflight check success
+   */
+  public boolean broadcastTitle(String server, String world, String title, String subtitle,
+      int fadeInDuration, int staticDuration, int fadeOutDuration, String permission);
+  
+  /**
    * Broadcasts a note to all players.
    * 
    * @param instrument the instrument in question
@@ -108,6 +135,19 @@ public interface PlayerManager {
    * @return <code>true</code> on transmission preflight check success
    */
   public boolean broadcastNote(String server, String world, Instrument instrument, Note note);
+  
+  /**
+   * Broadcasts a note to all players in a particular world.
+   * 
+   * @param server the server in question
+   * @param world the world in question
+   * @param instrument the instrument in question
+   * @param note the note in question
+   * @param permission a permission required for a player to receive the note
+   * @return <code>true</code> on transmission preflight check success
+   */
+  public boolean broadcastNote(String server, String world,
+      Instrument instrument, Note note, String permission);
   
   /**
    * Broadcasts a sound to all players.
@@ -140,6 +180,20 @@ public interface PlayerManager {
    * @return <code>true</code> on transmission preflight check success
    */
   public boolean playSound(String server, String world, Sound sound, float volume, float pitch);
+  
+  /**
+   * Broadcasts a sound to all players in a particular world.
+   * 
+   * @param server the server in question
+   * @param world the world in question
+   * @param sound the sound in question
+   * @param volume the volume of the sound
+   * @param pitch the pitch of the sound
+   * @param permission a permission required for a sound to be played to a player
+   * @return <code>true</code> on transmission preflight check success
+   */
+  public boolean playSound(String server, String world,
+      Sound sound, float volume, float pitch, String permission);
   
   /**
    * Retrieves a global player by unique identifier if they exist.

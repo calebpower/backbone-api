@@ -1,6 +1,6 @@
-package com.meepcraft.backbone.api.player.listener;
+package com.meepcraft.backbone.api.listener;
 
-import com.meepcraft.backbone.api.player.listener.event.GlobalPlayerTeleportEvent;
+import com.meepcraft.backbone.api.listener.event.GlobalPlayerTeleportEvent;
 
 /**
  * Listens for instances of {@link GlobalPlayerTeleportEvent} to be thrown.

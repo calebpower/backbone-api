@@ -1,6 +1,6 @@
-package com.meepcraft.backbone.api.player.listener;
+package com.meepcraft.backbone.api.listener;
 
-import com.meepcraft.backbone.api.player.listener.event.GlobalPlayerQuitEvent;
+import com.meepcraft.backbone.api.listener.event.GlobalPlayerQuitEvent;
 
 /**
  * Listens for instances of {@link GlobalPlayerQuitEvent} to be thrown.

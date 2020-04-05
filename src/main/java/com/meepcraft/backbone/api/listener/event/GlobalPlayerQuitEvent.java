@@ -1,4 +1,4 @@
-package com.meepcraft.backbone.api.player.listener.event;
+package com.meepcraft.backbone.api.listener.event;
 
 import com.meepcraft.backbone.api.location.GlobalLocation;
 import com.meepcraft.backbone.api.player.GlobalPlayer;

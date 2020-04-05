@@ -1,4 +1,4 @@
-package com.meepcraft.backbone.api.player.listener.event;
+package com.meepcraft.backbone.api.listener.event;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 

@@ -5,8 +5,8 @@ import java.sql.Connection;
 import org.bukkit.Server;
 import org.bukkit.plugin.Plugin;
 
+import com.meepcraft.backbone.api.listener.GlobalEventListener;
 import com.meepcraft.backbone.api.player.PlayerManager;
-import com.meepcraft.backbone.api.player.listener.GlobalEventListener;
 import com.meepcraft.backbone.api.request.BackboneRequest;
 import com.meepcraft.backbone.api.request.RequestAckListener;
 import com.meepcraft.backbone.api.request.RequestListener;
@@ -212,6 +212,30 @@ public class BackboneAPI {
     if(plugin == null) return false;
     plugin.deregisterRequestListener(requestListener);
     return true;
+  }
+  
+  /**
+   * Executes a command on all servers as the CONSOLE.
+   * 
+   * @param command the command
+   * @return <code>true</code> iff the command was sent and executed
+   */
+  public boolean executeCommand(String command) {
+    if(plugin == null) return false;
+    plugin.executeCommand(command);
+    return true;
+  }
+  
+  /**
+   * Executes a command on a particular server as the CONSOLE.
+   * 
+   * @param command the command
+   * @param server the server
+   * @return <code>true</code> iff the command was sent and executed
+   */
+  public boolean executeCommand(String command, String server) {
+    if(plugin == null) return false;
+    return executeCommand(command, server);
   }
   
 }

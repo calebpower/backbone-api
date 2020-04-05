@@ -1,6 +1,6 @@
-package com.meepcraft.backbone.api.player.listener;
+package com.meepcraft.backbone.api.listener;
 
-import com.meepcraft.backbone.api.player.listener.event.GlobalPlayerJoinEvent;
+import com.meepcraft.backbone.api.listener.event.GlobalPlayerJoinEvent;
 
 /**
  * Listens for instances of {@link GlobalPlayerJoinEvent} to be thrown.

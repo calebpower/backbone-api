@@ -156,7 +156,7 @@ public interface PlayerManager {
    * @param volume the volume of the sound
    * @param pitch the pitch of the sound
    */
-  public void playSound(Sound sound, float volume, float pitch);
+  public void broadcastSound(Sound sound, float volume, float pitch);
   
   /**
    * Broadcasts a sound to all players on a particular server.
@@ -167,7 +167,7 @@ public interface PlayerManager {
    * @param pitch the pitch of the sound
    * @return <code>true</code> on transmission preflight check success
    */
-  public boolean playSound(String server, Sound sound, float volume, float pitch);
+  public boolean broadcastSound(String server, Sound sound, float volume, float pitch);
   
   /**
    * Broadcasts a sound to all players in a particular world.
@@ -179,7 +179,7 @@ public interface PlayerManager {
    * @param pitch the pitch of the sound
    * @return <code>true</code> on transmission preflight check success
    */
-  public boolean playSound(String server, String world, Sound sound, float volume, float pitch);
+  public boolean broadcastSound(String server, String world, Sound sound, float volume, float pitch);
   
   /**
    * Broadcasts a sound to all players in a particular world.
@@ -192,7 +192,7 @@ public interface PlayerManager {
    * @param permission a permission required for a sound to be played to a player
    * @return <code>true</code> on transmission preflight check success
    */
-  public boolean playSound(String server, String world,
+  public boolean broadcastSound(String server, String world,
       Sound sound, float volume, float pitch, String permission);
   
   /**

@@ -174,35 +174,35 @@ public interface GlobalPlayer {
   /**
    * Retrieves a set of unique inventory identifiers.
    * 
-   * @return a set of UUIDs
+   * @return a set of inventory labels
    */
-  public Set<UUID> retrieveInventoryIDs();
+  public Set<String> retrieveInventoryIDs();
   
   /**
-   * Retrieves the inventory corresponding to the unique identifier in question.
+   * Retrieves the inventory corresponding to the inventory label in question.
    * 
-   * @param uuid the unique identifier of the inventory in question
+   * @param label the label of the inventory in question
    * @return a GlobalPlayerInventory object representing the queried inventory,
    *         or <code>null</code> if there is no corresponding inventory
    */
-  public GlobalPlayerInventory retrieveInventory(UUID uuid);
+  public GlobalPlayerInventory retrieveInventory(String label);
   
   /**
-   * Creates and returns a new inventory corresponding with a particular UUID
-   * if the inventory has not been created already.
+   * Creates and returns a new inventory corresponding with a particular
+   * inventory label if the inventory has not been created already.
    * 
-   * @param uuid the new inventory's proposed unique identifier
+   * @param label the new inventory's proposed label
    * @return <code>true</code> if a new inventory was created successfully, or
-   *         <code>false</code> if that particular UUID already exists
+   *         <code>false</code> if that particular label already exists
    */
-  public boolean createInventory(UUID uuid);
+  public boolean createInventory(String label);
   
   /**
-   * Drops an inventory corresponding with a particular UUID.
+   * Drops an inventory corresponding with a particular inventory label.
    * 
-   * @param uuid the unique identifier of the inventory in question
+   * @param label the unique label of the inventory in question
    * @return <code>true</code> if the inventory was dropped, or
    *         <code>false</code> if the inventory didn't exist
    */
-  public boolean dropInventory(UUID uuid);
+  public boolean dropInventory(String label);
 }
